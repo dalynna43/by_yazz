@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalones, Conjuntos y Chamarras | Streetwear Store</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#0d0d0d',
+                            card: '#181818',
+                            hover: '#242424',
+                            border: '#2e2e2e',
+                            grayLight: '#b0b0b0',
+                            grayDark: '#888888',
+                            whatsapp: '#25D366',
+                            whatsappHover: '#20ba5a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0d0d;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0d0d0d;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #242424;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #383838;
+        }
+
+        .glow-subtle {
+            box-shadow: 0 0 25px -5px rgba(255, 255, 255, 0.05);
+        }
+        .glow-wa {
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.3);
+        }
+        
+        .img-zoom {
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .product-card:hover .img-zoom {
+            transform: scale(1.06);
+        }
+        
+        .contenedor5 {
+            display: grid;
+            grid-template-columns: 1fr; /* 1 columna en móviles */
+            gap: 1.5rem;
+            width: 100%;
+            margin-bottom: 3rem; /* Espaciado debajo de cada fila */
+        }
+        @media (min-width: 768px) {
+            .contenedor5 { grid-template-columns: repeat(3, 1fr); } /* 3 columnas en tablets y PC */
+        }
+
+        .card {
+            background-color: #121212;
+            border: 1px solid #2e2e2e;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            padding-bottom: 44px; /* Espacio para el botón CTA de WhatsApp */
+            transition: border-color 0.3s ease;
+        }
+        .card:hover {
+            border-color: #555;
+        }
+        .card img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            background-color: #181818;
+        }
+        .card h2 {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin: 4px 0;
+            text-transform: uppercase;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .card .title3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            color: #a0a0a0;
+            margin: 0;
+            white-space: pre-wrap;
+            line-height: 1.3;
+        }
+        
+        .wa-btn {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            background-color: #25D366;
+            color: #000;
+            font-weight: bold;
+            font-size: 0.7rem;
+            padding: 6px 0;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+        }
+        .wa-btn:hover {
+            background-color: #20ba5a;
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-white selection:text-black">
+
+    <header class="sticky top-0 z-40 bg-[#0d0d0d]/90 backdrop-blur-md border-b border-brand-border/60 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 bg-white text-black font-black flex items-center justify-center rounded-lg tracking-wider text-xl group-hover:bg-zinc-200 transition">
+                    <img src="img/Captura de pantalla 2026-11-11 173432.png">
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-extrabold tracking-wider text-base sm:text-lg uppercase leading-tight text-white group-hover:text-zinc-300 transition">
+                        Pantalones, Conjuntos
+                    </span>
+                    <span class="text-xs tracking-widest text-brand-grayDark font-semibold uppercase">
+                        & Chamarras y Camisas
+                    </span>
+                </div>
+            </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#hero" class="text-white hover:text-brand-grayLight transition-colors">Inicio</a>
+        <a href="#catalogo" onclick="filterProducts('all')" class="text-brand-grayLight hover:text-white transition-colors">Catálogo</a>
+    </nav>
+
+            <div class="hidden sm:flex items-center">
+                <a id="nav-wa-btn" href="https://wa.me/523411706499" target="_blank" rel="noopener noreferrer"
+                    class="flex items-center gap-2 bg-brand-whatsapp hover:bg-brand-whatsappHover text-black font-bold px-4 py-2.5 rounded-full transition">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Contactar WhatsApp</span>
+                </a>
+            </div>
+
+
+            <button id="mobile-menu-btn" aria-label="Abrir Menú" class="md:hidden text-zinc-300 hover:text-white focus:outline-none p-2 rounded-lg bg-brand-card border border-brand-border">
+                <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-[#121212] border-b border-brand-border px-4 pt-3 pb-6 space-y-3">
+            <a href="#hero" onclick="toggleMobileMenu()" class="block text-white py-2 font-medium border-b border-brand-border/40">Inicio</a>
+            <a href="#catalogo" onclick="filterProducts('all'); toggleMobileMenu()" class="block text-brand-grayLight hover:text-white py-2 font-medium border-b border-brand-border/40">Ver Todo el Catálogo</a>
+
+            <div class="pt-2">
+                <a id="mobile-wa-btn" href="https://wa.me/523411706499" target="_blank" rel="noopener noreferrer" 
+                    class="flex items-center justify-center gap-2 bg-brand-whatsapp text-black font-bold py-3 rounded-xl w-full">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>Chatear por WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="relative bg-gradient-to-b from-[#141414] to-[#0d0d0d] py-16 lg:py-24 overflow-hidden border-b border-brand-border/40">
+            <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center gap-12">
+                <div class="flex-1 text-center lg:text-left">
+                    <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest bg-zinc-800 text-zinc-300 border border-zinc-700 mb-4">
+                        Gracias por elegir By Yazz
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-none mb-6">
+                        PANTALONES, CONJUNTOS <span class="text-zinc-500">& CHAMARRAS</span>
+                    </h1>
+                    <p class="text-brand-grayLight text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 mb-8 font-light">
+                        Los modelo que estan en este sitio son reales y la vendedora esta completamente deacuerdo en que el catalogo se pueda pagar a lo que más les guste (al contado o a pagos) el catalogo esta para todo tipo de amates de la moda
+                    </p>
+                    <br>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#catalogo" class="bg-white text-black font-extrabold px-8 py-4 rounded-xl hover:bg-zinc-200 transition-all text-center uppercase tracking-wider text-sm shadow-lg">
+                            Explorar Catálogo de entrada
+                        </a>
+                        <a id="hero-wa-btn" href="#" target="_blank" class="border border-zinc-700 bg-brand-card hover:bg-brand-hover text-white font-bold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-3 text-sm">
+                            <i class="fa-brands fa-whatsapp text-brand-whatsapp text-lg"></i>
+                            Pedir Asesoría Con La Vendedora
+                        </a>
+                    </div>
+
+                    <div class="mt-10 pt-8 border-t border-brand-border/60 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <p class="text-2xl font-extrabold text-white">100%</p>
+                            <p class="text-xs text-brand-grayDark font-medium">Seguridad de entrega</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-extrabold text-white">Ropa</p>
+                            <p class="text-xs text-brand-grayDark font-medium">Jeans, Zapatos, Botas, Chamarras y Conjuntos</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-extrabold text-white">WhatsApp</p>
+                            <p class="text-xs text-brand-grayDark font-medium">Atención Rapida</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-1 relative w-full max-w-lg lg:max-w-none">
+                    <div class="relative mx-auto rounded-2xl overflow-hidden border border-brand-border bg-brand-card glow-subtle">
+                        <img src="img/img3.jpg" 
+                             alt="Streetwear Look" 
+                             class="w-full h-[450px] sm:h-[520px] object-cover object-top">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-[#181818]/90 backdrop-blur-md border border-zinc-700/60">
+                            <p class="text-xs text-zinc-400 uppercase font-bold tracking-wider">Tendencias de la Semana</p>
+                            <br>
+                            <p class="text-lg font-bold text-white">CONJUNTOS & ZAPATOS.</p>
+                            <p class="text-sm text-brand-grayLight mt-1">Ropa disponible en envios solo arreglarse con la vendedora.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalogo" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-brand-border">
+                <div>
+                    <h2 class="text-3xl font-black text-white uppercase tracking-tight">
+                        Catálogo de Prendas
+                    </h2>
+                    <br>
+                    <pre class="text-brand-grayLight text-sm mt-1">
+Selecciona una Prenda de las que te gusten del catalogo
+y encuentra más prendas parecidas a las que quieres comunicandote con la vendedora directamenta a su WhatsApp.
+SI QUIERES MÁS INFO PARA COLOR DE PRENDAS Y PRESIOS DE CADA UNO DE ELLOS COMUNICARSE CON LA VENDEDORA
+                    </pre>
+                </div>
+             </div>
+
+        <div id="catalogo-container" class="mt-8">
+        </div>
+
+        <div id="no-products" class="hidden text-center py-16 border border-dashed border-zinc-800 rounded-2xl my-8">
+                <i class="fa-solid fa-shirt text-4xl text-zinc-600 mb-3"></i>
+                <p class="text-zinc-400 text-lg font-medium">No se encontraron productos en esta categoría.</p>
+                <button onclick="filterProducts('all')" class="mt-4 px-4 py-2 bg-zinc-800 text-white text-sm font-bold rounded-lg hover:bg-zinc-700 transition">
+                    Ver todos los productos
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#080808] border-t border-brand-border py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h4 class="text-white text-sm font-bold uppercase tracking-wider mb-4">Categorías</h4>
+                    <ul class="space-y-2 text-sm text-brand-grayDark">
+                        <li><a href="#catalogo" onclick="filterProducts('cargo')" class="hover:text-white transition">Pantalones</a></li>
+                        <li><a href="#catalogo" onclick="filterProducts('jeans')" class="hover:text-white transition">Zapatos</a></li>
+                        <li><a href="#catalogo" onclick="filterProducts('conjuntos')" class="hover:text-white transition">Conjuntos</a></li>
+                        <li><a href="#catalogo" onclick="filterProducts('chamarras')" class="hover:text-white transition">Pantalones ajustados</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-sm font-bold uppercase tracking-wider mb-4">Atención al Cliente</h4>
+                    <p class="text-sm text-brand-grayDark mb-3">
+                        ¿Tienes dudas con tu talla? Escríbe directamente a la vendedora en WhatsApp.
+                    </p>
+                    <a id="footer-wa-btn" href="#" target="_blank" class="inline-flex items-center gap-2 text-brand-whatsapp hover:underline text-sm font-semibold">
+                        <i class="fa-brands fa-whatsapp"></i> Chat de Ventas WhatsApp
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-zinc-900 text-center md:flex md:justify-between md:text-left text-xs text-brand-grayDark">
+                <p>&copy; Pantalones, Conjuntos y Chamarras.</p>
+                <p class="mt-2 md:mt-0">Ventas 100% personalizadas vía WhatsApp</p>
+            </div>
+        </div>
+    </footer>
+
+    <a id="floating-wa-btn" href="#" target="_blank" aria-label="Contacto WhatsApp" 
+       class="fixed bottom-6 right-6 z-50 bg-brand-whatsapp hover:bg-brand-whatsappHover text-black w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all transform hover:scale-110 glow-wa">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <div id="quickview-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm transition-opacity duration-300">
+        <div class="bg-brand-card border border-brand-border rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl relative flex flex-col md:flex-row max-h-[90vh] overflow-y-auto">
+            
+            <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-white hover:text-black transition">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="md:w-1/2 bg-black relative min-h-[280px]">
+                <img id="modal-img" src="" alt="Producto" class="w-full h-full object-cover">
+                <span id="modal-category-badge" class="absolute top-4 left-4 bg-white text-black text-[10px] font-extrabold uppercase px-2.5 py-1 rounded">
+                    Categoría
+                </span>
+            </div>
+
+            <div class="md:w-1/2 p-6 flex flex-col justify-between">
+                <div>
+                    <h3 id="modal-title" class="text-2xl font-black text-white leading-tight mb-2">
+                        Nombre del Producto
+                    </h3>
+                    <p id="modal-price" class="text-2xl font-bold text-white mb-4">
+                        $0.00
+                    </p>
+                    <p id="modal-description" class="text-sm text-brand-grayLight mb-6 leading-relaxed">
+                        Descripción breve del producto...
+                    </p>
+
+                    <div class="mb-6">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-white mb-2">
+                            Selecciona tu Talla:
+                        </label>
+                        <div class="grid grid-cols-4 gap-2" id="modal-sizes">
+                            <button type="button" onclick="selectSize('S')" class="size-btn py-2 border border-brand-border rounded-lg text-xs font-bold hover:border-white transition">S</button>
+                            <button type="button" onclick="selectSize('M')" class="size-btn py-2 border border-brand-border rounded-lg text-xs font-bold hover:border-white transition">M</button>
+                            <button type="button" onclick="selectSize('L')" class="size-btn py-2 border border-brand-border rounded-lg text-xs font-bold hover:border-white transition">L</button>
+                            <button type="button" onclick="selectSize('XL')" class="size-btn py-2 border border-brand-border rounded-lg text-xs font-bold hover:border-white transition">XL</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <a id="modal-wa-send" href="#" target="_blank" 
+                       class="w-full bg-brand-whatsapp hover:bg-brand-whatsappHover text-black font-extrabold py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 transition text-sm">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Pedir esta prenda por WhatsApp</span>
+                    </a>
+                    <p class="text-[11px] text-center text-brand-grayDark mt-2">
+                        Se abrirá WhatsApp con el modelo y la talla elegida.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+    const STORE_PHONE = "523411706499"; 
+
+    const products = [
+        { id: 1, name: "BOTINES MK", price: "Presio:Consultar con la vendedora.", description: "Botines para mujer en color negro / contacto en whatsapp para más", image: "./img/img_zapatos1.jpg" },
+        { id: 2, name: "TENIS", price: "Presio:Consultar con la vendedora.", description: "Tenis para mujer en diferentes colores / contacto en whatsapp para más", image: "./img/img_zapatos2.jpg" },
+        { id: 3, name: "TENIS NIKE", price: "Presio:Consultar con la vendedora.", description: "Tenis nike en color negro y de más colores / contacto en whatsapp para más", image: "./img/img_zapatos3.jpg" },
+        
+        { id: 4, name: "JNS BOGOTA", price: "Presio:Consultar con la vendedora", description: "El jns bogota para mujer de mezclilla", image: "./img/img4.jpg" },
+        { id: 5, name: "JNS BOGOTA", price: "Presio:Consultar con la vendedora", description: "El jns bogota para mujer de color negro", image: "./img/img5.jpg" },
+        { id: 6, name: "JNS BOGOTA", price: "Presio:Consultar con la vendedora", description: "El jns bogota para mujer de color azul marino", image: "./img/img6.jpg" },
+        
+        { id: 7, name: "JNS BOGOTA", price: "Presio:Consultar con la vendedora", description: "El jns bogota de campana para mujer", image: "./img/img7.jpg" },
+        { id: 8, name: "JNS BOGOTA", price: "Presio:Consultar con la vendedora", description: "El jns bogota ajuztado para mujer", image: "./img/img8.jpg" },
+        { id: 9, name: "MAYA MOTIVATION W COUTURE", price: "Presio:Consultar con la vendedora", description: "El pantalon baggy para mujer", image: "./img/img9.jpg" },
+        
+        { id: 10, name: "CONJUNTO", price: "Presio:Consultar con la vendedora", description: "Conjunto de tela para mujer", image: "./img/img10.jpg" },
+        { id: 11, name: "CONJUNTO", price: "Presio:Consultar con la vendedora", description: "Conjunto para mujer", image: "./img/img11.jpg" },
+        { id: 12, name: "CONJUNTO", price: "Presio:Consultar con la vendedora", description: "Conjunto de ropa ya se de short o pns para mujer", image: "./img/img12.jpg" },
+        
+        { id: 13, name: "SUETER", price: "Presio:Consultar con la vendedora", description: "Sueter negro para mujer", image: "./img/img13.jpg" },
+        { id: 14, name: "HOODIE", price: "Presio:Consultar con la vendedora", description: "Hoodie negro para mujer", image: "./img/img14.jpg" },
+        { id: 15, name: "MAYA LEVANTADORA", price: "Presio:Consultar con la vendedora", description: "Maya levantadora de nalgas para mujer", image: "./img/img15.jpg" },
+        
+        { id: 16, name: "PANTALON DE FRIO", price: "Presio:Consultar con la vendedora", description: "El pantalon para el frio de mujer", image: "./img/img16.jpg" },
+        { id: 17, name: "PNS HOLGADO", price: "Presio:Consultar con la vendedora", description: "Pantalon comodo para mujer", image: "./img/img17.jpg" },
+        { id: 18, name: "TENIS ESTILO TIGRES", price: "Presio:Consultar con la vendedora", description: "Tenies comodos para mujer", image: "./img/img18.jpg" },
+        
+        { id: 19, name: "TENIS", price: "Presio:Consultar con la vendedora", description: "Tenis negros para mujer", image: "./img/img19.jpg" },
+        { id: 20, name: "TENIS NIKE", price: "Presio:Consultar con la vendedora", description: "Tenis negro con blanco para mujer", image: "./img/img22.jpg" },
+        { id: 21, name: "TENIS", price: "Presio:Consultar con la vendedora", description: "Tenis blancos para mujer", image: "./img/img21.jpg" }
+    ];
+
+    let selectedProduct = null;
+    let selectedSize = 'M';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        setupWhatsAppLinks();
+        renderProducts('all');
+    });
+
+    function setupWhatsAppLinks() {
+        const generalMessage = encodeURIComponent("¡Hola! Me gustaría información y asesoría sobre las prendas que tienen disponibles.");
+        const waUrl = `https://wa.me/${STORE_PHONE}?text=${generalMessage}`;
+
+        document.getElementById('nav-wa-btn').href = waUrl;
+        document.getElementById('mobile-wa-btn').href = waUrl;
+        document.getElementById('hero-wa-btn').href = waUrl;
+        document.getElementById('footer-wa-btn').href = waUrl;
+        document.getElementById('floating-wa-btn').href = waUrl;
+    }
+
+    function renderProducts(filter = 'all') {
+        const container = document.getElementById('catalogo-container');
+        const noProductsMsg = document.getElementById('no-products');
+        container.innerHTML = '';
+
+        const filtered = products; 
+
+        if (filtered.length === 0) {
+            noProductsMsg.classList.remove('hidden');
+            return;
+        } else {
+            noProductsMsg.classList.add('hidden');
+        }
+
+        let productIndex = 0;
+        
+        for (let i = 1; i <= 7; i++) {
+            if (productIndex >= filtered.length) break;
+
+            const sectionTitle = document.createElement('h3');
+            sectionTitle.className = "text-xl font-black text-white mb-4 mt-6 border-b border-brand-border/60 pb-2 uppercase tracking-wide";
+            sectionTitle.innerText = `Sección ${i}`;
+            container.appendChild(sectionTitle);
+
+            const grid = document.createElement('div');
+            grid.className = "contenedor5";
+
+            for (let j = 0; j < 3; j++) {
+                if (productIndex >= filtered.length) break; 
+                
+                const p = filtered[productIndex];
+                
+                const message = encodeURIComponent(`¡Hola! Me interesa comprar el modelo: *${p.name}* (${p.price}). ¿Tienen disponibilidad?`);
+                const directWaLink = `https://wa.me/${STORE_PHONE}?text=${message}`;
+
+                const card = document.createElement('div');
+                card.className = "card";
+                
+                card.innerHTML = `
+                    <img src="${p.image}" alt="${p.name}" loading="lazy">
+                    <h2>${p.name}</h2>
+                    <pre class="title3">${p.price} ${p.description}</pre>
+                    <a href="${directWaLink}" target="_blank" class="wa-btn">Pedir por WA</a>
+                `;
+
+                grid.appendChild(card);
+                productIndex++;
+            }
+            
+            container.appendChild(grid);
+        }
+    }
+
+    function filterProducts(category) {
+        const buttons = document.querySelectorAll('.filter-btn');
+        buttons.forEach(btn => {
+            if (btn.getAttribute('data-filter') === category) {
+                btn.className = "filter-btn active-filter px-4 py-2 rounded-lg text-sm font-semibold transition border border-white bg-white text-black";
+            } else {
+                btn.className = "filter-btn px-4 py-2 rounded-lg text-sm font-semibold transition border border-brand-border bg-brand-card text-brand-grayLight hover:text-white hover:border-zinc-500";
+            }
+        });
+        renderProducts(category);
+    }
+
+    function openModal(productId) {
+        const product = products.find(p => p.id === productId);
+        if (!product) return;
+
+        selectedProduct = product;
+        selectedSize = 'M'; 
+
+        document.getElementById('modal-img').src = product.image;
+        document.getElementById('modal-title').innerText = product.name;
+        document.getElementById('modal-price').innerText = product.price;
+        document.getElementById('modal-description').innerText = product.description;
+        
+        const badge = document.getElementById('modal-category-badge');
+        if(badge) badge.innerText = product.categoryLabel || '';
+
+        updateModalWhatsAppLink();
+        updateSizeButtonsUI();
+
+        document.getElementById('quickview-modal').classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        document.getElementById('quickview-modal').classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
+
+    function selectSize(size) {
+        selectedSize = size;
+        updateSizeButtonsUI();
+        updateModalWhatsAppLink();
+    }
+
+    function updateSizeButtonsUI() {
+        const buttons = document.querySelectorAll('.size-btn');
+        buttons.forEach(btn => {
+            if (btn.innerText === selectedSize) {
+                btn.className = "size-btn py-2 border-2 border-white bg-white text-black font-extrabold rounded-lg text-xs transition shadow";
+            } else {
+                btn.className = "size-btn py-2 border border-brand-border bg-transparent text-white font-bold rounded-lg text-xs hover:border-zinc-400 transition";
+            }
+        });
+    }
+
+    function updateModalWhatsAppLink() {
+        if (!selectedProduct) return;
+        
+        const message = encodeURIComponent(`¡Hola! Quisiera realizar el pedido del modelo: *${selectedProduct.name}*\nPrecio: ${selectedProduct.price}\nTalla seleccionada: *${selectedSize}*\n\n¿Me confirman disponibilidad y datos para el envío?`);
+        
+        document.getElementById('modal-wa-send').href = `https://wa.me/${STORE_PHONE}?text=${message}`;
+    }
+
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+        
+        if (menu.classList.contains('hidden')) {
+            menu.classList.remove('hidden');
+            icon.className = "fa-solid fa-xmark text-xl";
+        } else {
+            menu.classList.add('hidden');
+            icon.className = "fa-solid fa-bars text-xl";
+        }
+    }
+
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    }
+
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+
+    const modalView = document.getElementById('quickview-modal');
+    if (modalView) {
+        modalView.addEventListener('click', (e) => {
+            if (e.target.id === 'quickview-modal') closeModal();
+        });
+    }
+</script>
+</body>
+</html>
